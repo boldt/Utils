@@ -29,6 +29,10 @@ public class MimeTypeUtil {
             throw new MimeTypeUtilException("Mime type cannot be determined.");
         }
 
+        if("???".equals(type)) {
+            throw new MimeTypeUtilException("Mime type cannot be determined.");
+        }
+
         return type;
     }
 

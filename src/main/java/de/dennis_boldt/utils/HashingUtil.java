@@ -5,13 +5,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 import org.apache.commons.io.IOUtils;
 
 public class HashingUtil {
 
-    public static String sha1(final String s) {
+	public static String sha1(final String s) {
     	return byteToHash(s.getBytes(), "SHA-1");
     }
 
