@@ -14,7 +14,7 @@ public class NetworkUtilsTest {
 		try {
 			address = InetAddress.getByName("127.0.0.1");
 		} catch (UnknownHostException e) { }
-		Assert.assertTrue(NetworkUtils.isHostAlive(address, 2500));
+		Assert.assertTrue(NetworkUtil.isReachable(address, 2500));
 	}
 
 	@Test
@@ -23,7 +23,7 @@ public class NetworkUtilsTest {
 		try {
 			address = InetAddress.getByName("192.168.254.254");
 		} catch (UnknownHostException e) { }
-		Assert.assertFalse(NetworkUtils.isHostAlive(address, 2500));
+		Assert.assertFalse(NetworkUtil.isReachable(address, 2500));
 	}
 
 }
