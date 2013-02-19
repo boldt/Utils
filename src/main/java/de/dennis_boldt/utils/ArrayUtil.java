@@ -1,18 +1,14 @@
 package de.dennis_boldt.utils;
 
-import java.lang.reflect.Array;
+import org.apache.commons.lang.ArrayUtils;
 
 public class ArrayUtil {
 
 	public static <T> T[] concat(T[] A, T[] B) {
-		int aLen = A.length;
-		int bLen = B.length;
-
+		// @see: http://stackoverflow.com/a/80559/605890
 		@SuppressWarnings("unchecked")
-		T[] C = (T[]) Array.newInstance(A.getClass().getComponentType(), aLen + bLen);
-		System.arraycopy(A, 0, C, 0, aLen);
-		System.arraycopy(B, 0, C, aLen, bLen);
-		return C;
+		T[] concated = (T[]) ArrayUtils.addAll(A, B);
+		return concated;
 	}
 
 }

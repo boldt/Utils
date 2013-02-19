@@ -15,4 +15,8 @@ public class StringUtil {
 		return StringUtils.join(array, separator);
 	}
 
+	// TODO:
+	// fromStringToByteArray
+	// https://github.com/itm/itm-utils/blob/master/src/main/java/de/uniluebeck/itm/tr/util/StringUtils.java#L133
+
 }
