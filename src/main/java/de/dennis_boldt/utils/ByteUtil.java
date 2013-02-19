@@ -18,4 +18,28 @@ public class ByteUtil {
 		return b.array();
 	}
 
+	/**
+ 	 * Converts a short value value to an byte array
+ 	 *
+	 * @param value
+	 * @return
+	 */
+	public static byte[] toByteArray(short value) {
+		ByteBuffer b = ByteBuffer.allocate(2);
+		b.putShort(value);
+		return b.array();
+	}
+
+	/**
+	 * Converts an int value to an byte array
+	 *
+	 * @param value
+	 * @return
+	 */
+	public static byte[] toByteArray(int value) {
+		ByteBuffer b = ByteBuffer.allocate(4);
+		b.putInt(value);
+		return b.array();
+	}
+
 }
