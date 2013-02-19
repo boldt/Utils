@@ -4,12 +4,10 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 
 /**
- * TODO:
- * Refactor to numer of bytes as parameter
- * @author Boldt
- *
+ * @author Dennis Boldt
  */
-public class Random {
+
+public class RandomUtil {
 
 	public static String getRandomHex(int bytes) {
 		return HexUtil.byteArrayToHexString(getRandomBytes(bytes));

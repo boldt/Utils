@@ -2,7 +2,7 @@ package de.dennis_boldt.utils;
 
 import java.nio.ByteBuffer;
 
-public class ByteUtils {
+public class ByteUtil {
 
 	/**
 	 * Concatenates two byte arrays

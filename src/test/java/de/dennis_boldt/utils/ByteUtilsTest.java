@@ -10,7 +10,7 @@ public class ByteUtilsTest {
 		byte[] b1 = {1,2,3,4};
 		byte[] b2 = {5,6};
 		byte[] b3 = {1,2,3,4,5,6};
-		Assert.assertArrayEquals(b3, ByteUtils.concat(b1, b2));
+		Assert.assertArrayEquals(b3, ByteUtil.concat(b1, b2));
 	}
 
 	@Test
@@ -20,7 +20,7 @@ public class ByteUtilsTest {
 		byte[] b2 = {};
 		byte[] b3 = {};
 
-		Assert.assertArrayEquals(b3, ByteUtils.concat(b1, b2));
+		Assert.assertArrayEquals(b3, ByteUtil.concat(b1, b2));
 	}
 
 	@Test
@@ -30,7 +30,7 @@ public class ByteUtilsTest {
 		byte[] b2 = {};
 		byte[] b3 = {1,2,3,4};
 
-		Assert.assertArrayEquals(b3, ByteUtils.concat(b1, b2));
+		Assert.assertArrayEquals(b3, ByteUtil.concat(b1, b2));
 	}
 
 	@Test
@@ -40,6 +40,6 @@ public class ByteUtilsTest {
 		byte[] b2 = {1,2,3,4};
 		byte[] b3 = {1,2,3,4};
 
-		Assert.assertArrayEquals(b3, ByteUtils.concat(b1, b2));
+		Assert.assertArrayEquals(b3, ByteUtil.concat(b1, b2));
 	}
 }
