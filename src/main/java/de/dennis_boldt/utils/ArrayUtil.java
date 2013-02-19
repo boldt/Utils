@@ -53,11 +53,8 @@ public class ArrayUtil {
 	    return false;
 	}
 
-	public static <T> T[] toArray(List<T> list) {
-		@SuppressWarnings("unchecked")
-		T[] array = (T[]) list.toArray();
-		return array;
+	public static <T> List<T> toList(T[] array) {
+		return Arrays.asList(array);
 	}
-
 
 }

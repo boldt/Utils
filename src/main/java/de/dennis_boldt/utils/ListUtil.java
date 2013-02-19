@@ -14,7 +14,13 @@ public class ListUtil {
 	 * @return
 	 */
 	public static <T> String implode(List<T> list, String separator) {
-		return ArrayUtil.implode(ArrayUtil.toArray(list), separator);
+		return ArrayUtil.implode(ListUtil.toArray(list), separator);
+	}
+
+	public static <T> T[] toArray(List<T> list) {
+		@SuppressWarnings("unchecked")
+		T[] array = (T[]) list.toArray();
+		return array;
 	}
 
 }
