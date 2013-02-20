@@ -27,7 +27,6 @@ public class ArrayUtilTest {
 		intList.add(3);
 		stringArray = new String[] {"a", "b", "c"};
 		intArray = new Integer[] {1, 2, 3};
-
 	}
 
 	@Test
@@ -55,7 +54,5 @@ public class ArrayUtilTest {
 		Assert.assertEquals(stringList, ArrayUtil.toList(stringArray));
 		Assert.assertEquals(intList, ArrayUtil.toList(intArray));
 	}
-
-
 
 }

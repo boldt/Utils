@@ -9,10 +9,18 @@ import net.sf.jmimemagic.MagicMatch;
  *
  * @author Dennis Boldt
  *
- * @see: http://www.rgagnon.com/javadetails/java-0487.html
+ *
  */
 public class MimeTypeUtil {
 
+	/**
+	 * Gets the mime type for a given file
+	 *
+	 * @see: http://www.rgagnon.com/javadetails/java-0487.html
+	 * @param file The file
+	 * @return The mimetype
+	 * @throws MimeTypeUtilException
+	 */
     public static String getMimeType(File file) throws MimeTypeUtilException {
         String type = null;
 
@@ -25,11 +33,7 @@ public class MimeTypeUtil {
             throw new MimeTypeUtilException(e);
         }
 
-        if (type == null) {
-            throw new MimeTypeUtilException("Mime type cannot be determined.");
-        }
-
-        if("???".equals(type)) {
+        if (type == null || "???".equals(type)) {
             throw new MimeTypeUtilException("Mime type cannot be determined.");
         }
 
