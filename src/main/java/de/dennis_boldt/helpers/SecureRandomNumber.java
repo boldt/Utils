@@ -24,7 +24,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
 */
 
-package de.dennis_boldt.utils;
+package de.dennis_boldt.helpers;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -36,7 +36,7 @@ import java.security.SecureRandom;
  *
  * @author Mark S. Kolich
  */
-class SecureRandomNumber {
+public class SecureRandomNumber {
 
 	// This ins't thread safe but we probably don't really care
 	// since all we're doing is reading a bunch of random numbers

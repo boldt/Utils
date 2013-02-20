@@ -28,7 +28,7 @@ public class ArrayUtil {
 	 * @param separator
 	 * @return
 	 */
-	public static <T> String implode(T[] array, String separator) {
+	public static <T> String join(T[] array, String separator) {
 	    String out = "";
 	    for(int i=0; i<array.length; i++) {
 	        if(i!=0) { out += separator; }
@@ -53,6 +53,9 @@ public class ArrayUtil {
 	    return false;
 	}
 
+	/*
+	 * TODO
+	 */
 	public static <T> List<T> toList(T[] array) {
 		return Arrays.asList(array);
 	}

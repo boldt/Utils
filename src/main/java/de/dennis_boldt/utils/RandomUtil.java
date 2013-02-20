@@ -3,6 +3,8 @@ package de.dennis_boldt.utils;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 
+import de.dennis_boldt.helpers.SecureRandomNumber;
+
 /**
  * @author Dennis Boldt
  */

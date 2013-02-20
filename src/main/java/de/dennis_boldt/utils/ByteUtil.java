@@ -19,7 +19,7 @@ public class ByteUtil {
 	}
 
 	/**
- 	 * Converts a short value value to an byte array
+ 	 * Converts a short value to an byte array
  	 *
 	 * @param value
 	 * @return

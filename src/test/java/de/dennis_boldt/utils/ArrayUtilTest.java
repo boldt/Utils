@@ -37,8 +37,8 @@ public class ArrayUtilTest {
 
 	@Test
 	public void testImplode() {
-		Assert.assertEquals("a,b,c", ArrayUtil.implode(stringArray, ","));
-		Assert.assertEquals("1,2,3", ArrayUtil.implode(intArray, ","));
+		Assert.assertEquals("a,b,c", ArrayUtil.join(stringArray, ","));
+		Assert.assertEquals("1,2,3", ArrayUtil.join(intArray, ","));
 	}
 
 	@Test

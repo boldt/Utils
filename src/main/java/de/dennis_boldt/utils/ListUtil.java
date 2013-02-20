@@ -14,7 +14,7 @@ public class ListUtil {
 	 * @return
 	 */
 	public static <T> String implode(List<T> list, String separator) {
-		return ArrayUtil.implode(ListUtil.toArray(list), separator);
+		return ArrayUtil.join(ListUtil.toArray(list), separator);
 	}
 
 	public static <T> T[] toArray(List<T> list) {

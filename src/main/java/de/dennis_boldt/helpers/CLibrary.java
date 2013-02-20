@@ -1,4 +1,4 @@
-package de.dennis_boldt.utils;
+package de.dennis_boldt.helpers;
 import com.sun.jna.Library;
 import com.sun.jna.Native;
 
@@ -8,7 +8,7 @@ import com.sun.jna.Native;
  * @author Dennis
  *
  */
-interface CLibrary extends Library {
+public interface CLibrary extends Library {
 
 	/**
 	 * TODO: Windows
