@@ -5,7 +5,7 @@ import com.sun.jna.Native;
 /**
  * @see: https://github.com/twall/jna
  *
- * @author Dennis
+ * @author Dennis Boldt
  *
  */
 public interface CLibrary extends Library {

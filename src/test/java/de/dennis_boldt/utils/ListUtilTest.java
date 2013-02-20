@@ -31,8 +31,8 @@ public class ListUtilTest {
 
 	@Test
 	public void testImplode() {
-		Assert.assertEquals("a,b,c", ListUtil.implode(stringList, ","));
-		Assert.assertEquals("1,2,3", ListUtil.implode(intList, ","));
+		Assert.assertEquals("a,b,c", ListUtil.join(stringList, ","));
+		Assert.assertEquals("1,2,3", ListUtil.join(intList, ","));
 	}
 
 	@Test

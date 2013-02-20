@@ -4,7 +4,27 @@ package de.dennis_boldt.utils;
  * TODO: Cleanup
  * http://www.daniweb.com/software-development/java/code/216874/primitive-types-as-byte-arrays
  */
+/**
+ * Utils for hex handling
+ *
+ * @author Dennis Boldt
+ *
+ */
 public class HexUtil {
+
+    public static String toHexString(byte[] b) {
+    	/*
+    	 * TODO: Improve
+    	 * http://stackoverflow.com/questions/9655181/convert-from-byte-array-to-hex-string-in-java
+    	 * http://stackoverflow.com/questions/332079/in-java-how-do-i-convert-a-byte-array-to-a-string-of-hex-digits-while-keeping-l
+    	 * http://stackoverflow.com/questions/332079/in-java-how-do-i-convert-a-byte-array-to-a-string-of-hex-digits-while-keeping-l/2197650#2197650
+    	 */
+        String result = "";
+        for (int i = 0; i < b.length; i++) {
+            result += Integer.toString((b[i] & 0xff) + 0x100, 16).substring(1);
+        }
+        return result;
+    }
 
 	/**
 	 * TODO: Improve

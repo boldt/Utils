@@ -15,7 +15,6 @@ import net.sf.jmimemagic.MagicMatch;
 import org.apache.commons.io.IOUtils;
 
 import de.dennis_boldt.helpers.CLibrary;
-import de.dennis_boldt.helpers.FileUtilException;
 
 /*
  * TODO:
@@ -23,6 +22,12 @@ import de.dennis_boldt.helpers.FileUtilException;
  * @see: http://www.javabeat.net/2012/07/creating-hard-links-and-soft-links-for-a-file-in-java/
  * @see: http://www.tutego.de/blog/javainsel/2011/06/dateien-kopieren-und-verschieben-mit-files-methode-in-java-7/
  * @see: http://docs.oracle.com/javase/tutorial/essential/io/links.html
+ */
+/**
+ * Utils for files
+ *
+ * @author Dennis Boldt
+ *
  */
 public class FileUtil {
 
@@ -58,7 +63,7 @@ public class FileUtil {
      * @return the byte array
      * @throws FileUtilException if something wents wrong
      */
-    public static byte[] toByteArray(File f) throws FileUtilException {
+    public static byte[] toBytes(File f) throws FileUtilException {
 		// TODO: Evaluate/Benchmark: Commons-IO/Guava/JDK-7/
 		//
 		// (1) 	Guava:

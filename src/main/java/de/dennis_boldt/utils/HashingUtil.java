@@ -5,8 +5,12 @@ import java.nio.ByteBuffer;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import de.dennis_boldt.helpers.FileUtilException;
-
+/**
+ * Utils for hashing
+ *
+ * @author Dennis Boldt
+ *
+ */
 public class HashingUtil {
 
 	/*
@@ -113,7 +117,7 @@ public class HashingUtil {
 
     private static String doDigestForFile(final File f, final String algorithm) {
 		try {
-			return doDigestForByteArray(FileUtil.toByteArray(f), algorithm);
+			return doDigestForByteArray(FileUtil.toBytes(f), algorithm);
 		} catch (FileUtilException e) {
 			e.printStackTrace();
 			return null;

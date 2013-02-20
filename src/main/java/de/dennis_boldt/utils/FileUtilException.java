@@ -1,8 +1,7 @@
-package de.dennis_boldt.helpers;
-
-
+package de.dennis_boldt.utils;
 
 /**
+ * An exception for the FileUtil
  *
  * @author Dennis Boldt
  *

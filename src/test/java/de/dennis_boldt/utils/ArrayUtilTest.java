@@ -36,6 +36,44 @@ public class ArrayUtilTest {
 	}
 
 	@Test
+	public void testConcat1() {
+		byte[] b1 = {1,2,3,4};
+		byte[] b2 = {5,6};
+		byte[] b3 = {1,2,3,4,5,6};
+		Assert.assertArrayEquals(b3, ArrayUtil.concat(b1, b2));
+	}
+
+	@Test
+	public void testConcat2() {
+
+		byte[] b1 = {};
+		byte[] b2 = {};
+		byte[] b3 = {};
+
+		Assert.assertArrayEquals(b3, ArrayUtil.concat(b1, b2));
+	}
+
+	@Test
+	public void testConcat3() {
+
+		byte[] b1 = {1,2,3,4};
+		byte[] b2 = {};
+		byte[] b3 = {1,2,3,4};
+
+		Assert.assertArrayEquals(b3, ArrayUtil.concat(b1, b2));
+	}
+
+	@Test
+	public void testConcat4() {
+
+		byte[] b1 = {};
+		byte[] b2 = {1,2,3,4};
+		byte[] b3 = {1,2,3,4};
+
+		Assert.assertArrayEquals(b3, ArrayUtil.concat(b1, b2));
+	}
+
+	@Test
 	public void testImplode() {
 		Assert.assertEquals("a,b,c", ArrayUtil.join(stringArray, ","));
 		Assert.assertEquals("1,2,3", ArrayUtil.join(intArray, ","));
@@ -54,5 +92,6 @@ public class ArrayUtilTest {
 		Assert.assertEquals(stringList, ArrayUtil.toList(stringArray));
 		Assert.assertEquals(intList, ArrayUtil.toList(intArray));
 	}
+
 
 }
