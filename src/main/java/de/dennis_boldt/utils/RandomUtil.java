@@ -20,7 +20,7 @@ public class RandomUtil {
 	 * @return
 	 */
 	public static String getRandomHex(int bytes) {
-		return HexUtil.byteArrayToHexString(getRandomBytes(bytes));
+		return HexUtil.toString(getRandomBytes(bytes));
 	}
 
 	/**

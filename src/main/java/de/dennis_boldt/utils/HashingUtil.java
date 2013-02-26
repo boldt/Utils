@@ -108,7 +108,7 @@ public class HashingUtil {
 		try {
 			MessageDigest md = MessageDigest.getInstance(algorithm);
 			byte[] hash = md.digest(bytes);
-			return HexUtil.byteArrayToHexString(hash);
+			return HexUtil.toString(hash);
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 			return null;

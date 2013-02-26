@@ -1,7 +1,7 @@
 package de.dennis_boldt.utils;
 
 /*
- * TODO: Cleanup
+ * TODO:
  * http://www.daniweb.com/software-development/java/code/216874/primitive-types-as-byte-arrays
  */
 /**
@@ -12,82 +12,53 @@ package de.dennis_boldt.utils;
  */
 public class HexUtil {
 
-    public static String toHexString(byte[] b) {
-    	/*
-    	 * TODO: Improve
-    	 * http://stackoverflow.com/questions/9655181/convert-from-byte-array-to-hex-string-in-java
-    	 * http://stackoverflow.com/questions/332079/in-java-how-do-i-convert-a-byte-array-to-a-string-of-hex-digits-while-keeping-l
-    	 * http://stackoverflow.com/questions/332079/in-java-how-do-i-convert-a-byte-array-to-a-string-of-hex-digits-while-keeping-l/2197650#2197650
-    	 */
-        String result = "";
-        for (int i = 0; i < b.length; i++) {
-            result += Integer.toString((b[i] & 0xff) + 0x100, 16).substring(1);
-        }
-        return result;
-    }
-
 	/**
-	 * TODO: Improve
-	 * http://stackoverflow.com/questions/9655181/convert-from-byte-array-to-hex-string-in-java
-	 * http://stackoverflow.com/questions/332079/in-java-how-do-i-convert-a-byte-array-to-a-string-of-hex-digits-while-keeping-l
-	 * http://stackoverflow.com/questions/332079/in-java-how-do-i-convert-a-byte-array-to-a-string-of-hex-digits-while-keeping-l/2197650#2197650
+	 * Converts a byte Array to a hex String: String({0xAA,0xBB}) -> "AABB"
+	 *
+	 * @param b
+	 * @return
 	 */
-    public static String byteArrayToHexString(byte[] b) {
-    	// 		   System.out.format("0x%x ", b);
-        String result = "";
-        for (int i = 0; i < b.length; i++) {
-            result += Integer.toString((b[i] & 0xff) + 0x100, 16).substring(1);
-        }
-        return result;
+    public static String toString(byte[] b) {
+    	return toString(b,"","");
     }
 
-    /*
-	private static final char HEX_DIGIT [] = {
-        '0', '1', '2', '3', '4', '5', '6', '7',
-        '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
-    };
-	*/
     /**
-     * Convert a byte array into its hex String
-     * equivalent.
-     * @param bytes
-     * @return
-     */
-    /*
-    public static String toHex ( byte [] bytes ) {
-
-        if ( bytes == null ) {
-            return null;
-        }
-
-        StringBuilder buffer = new StringBuilder(bytes.length*2);
-        for ( byte thisByte : bytes ) {
-            buffer.append(byteToHex(thisByte));
-        }
-
-        return buffer.toString();
-
+	 * Converts a byte Array to a hex String by prepending/appending.
+	 * toString({0xAA,0xBB},"0x"," ") -> "0xAA 0xBB"
+	 *
+	 * @param b
+	 * @return
+	 */
+    public static String toString(byte[] b, String prepending, String appending) {
+    	// String.format("%05X", b)
+    	String result = "";
+    	for (int i = 0; i < b.length; i++) {
+    		result += prepending + Integer.toString((b[i] & 0xff) + 0x100, 16).substring(1) + appending;
+    	}
+    	return result.trim().toLowerCase();
     }
-    */
 
     /**
      * Convert a single byte into its hex String
      * equivalent.
+     *
      * @param b
      * @return
      */
-    /*
-    private static String byteToHex ( byte b ) {
-        char [] array = { HEX_DIGIT[(b >> 4) & 0x0f],
-                            HEX_DIGIT[b & 0x0f] };
+    public static String toString ( byte b ) {
+        char[] array = { HEX_DIGIT[(b >> 4) & 0x0f], HEX_DIGIT[b & 0x0f] };
         return new String(array);
     }
-    */
 
     /**
+     * Converts a hext string to a byte array
+     *
      * @see: http://stackoverflow.com/a/140861/605890
+     *
+     * @param s
+     * @return
      */
-    public static byte[] hexStringToByteArray(String s) {
+    public static byte[] toArray(String s) {
         int len = s.length();
         byte[] data = new byte[len / 2];
         for (int i = 0; i < len; i += 2) {
@@ -98,14 +69,11 @@ public class HexUtil {
     }
 
     /*
-    for (byte b : bytes) {
-		   System.out.format("0x%x ", b);
-		}
-	*/
-
-    public static void main(String[] args) {
-    	byte[] bytes = {(byte) 0xff, (byte) 0xff};
-    	System.out.println(HexUtil.hexStringToByteArray(HexUtil.byteArrayToHexString(bytes)));
-	}
+     * Helper array
+     */
+    private static final char HEX_DIGIT [] = {
+        '0', '1', '2', '3', '4', '5', '6', '7',
+        '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+    };
 
 }
