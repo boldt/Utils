@@ -1,8 +1,7 @@
 package de.dennis_boldt.utils;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.ByteBufAllocator;
-import io.netty.buffer.PooledByteBufAllocator;
+import io.netty.buffer.Unpooled;
 
 import java.nio.ByteBuffer;
 
@@ -21,11 +20,7 @@ public class NettyUtil {
 	 * @return
 	 */
 	public static ByteBuf toByteBuf(byte[] bytes) {
-    	ByteBufAllocator alloc = new PooledByteBufAllocator();
-    	ByteBuf b = alloc.buffer();
-    	b.capacity(bytes.length);
-    	b.writeBytes(bytes);
-    	return b;
+		return Unpooled.copiedBuffer(bytes);
     }
 
 	/**
@@ -35,11 +30,7 @@ public class NettyUtil {
 	 * @return
 	 */
 	public static ByteBuf toByteBuf(ByteBuffer bytes) {
-    	ByteBufAllocator alloc = new PooledByteBufAllocator();
-    	ByteBuf b = alloc.buffer();
-    	b.capacity(bytes.capacity());
-    	b.writeBytes(bytes);
-    	return b;
+		return Unpooled.copiedBuffer(bytes);
     }
 
 	/**
