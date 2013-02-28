@@ -46,4 +46,7 @@ public class NetworkUtil {
 			return false;
 		}
 	}
+
+	// TODO:
+	// http://singztechmusings.wordpress.com/2011/05/26/java-how-to-check-if-a-web-page-exists-and-is-available/
 }

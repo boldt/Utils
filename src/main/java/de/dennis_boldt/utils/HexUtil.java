@@ -19,7 +19,7 @@ public class HexUtil {
 	 * @return
 	 */
     public static String toString(byte[] b) {
-    	return toString(b,"","");
+    	return toString(b, "", "");
     }
 
     /**
