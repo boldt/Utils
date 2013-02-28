@@ -26,3 +26,8 @@ This is a small collection of commonly needed Java functionalities.
 </dependency>
 ```
 
+### Thanks to
+
+* [Apache Commons](http://commons.apache.org/)
+* [jmimemagic](https://github.com/arimus/jmimemagic) (Mime type library)
+

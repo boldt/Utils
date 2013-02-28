@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.dennis_boldt</groupId>
 	<artifactId>Utils</artifactId>
-	<version>0.0.10</version>
+	<version>0.0.11</version>
 	<dependencies>
 		<dependency>
 			<groupId>jmimemagic</groupId>
@@ -29,6 +29,11 @@
 			<groupId>com.sun.jna</groupId>
 			<artifactId>jna</artifactId>
 			<version>3.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>4.0.0.Beta1</version>
 		</dependency>
 	</dependencies>
 	<build>
