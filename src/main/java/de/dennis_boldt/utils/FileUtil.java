@@ -32,7 +32,7 @@ import de.dennis_boldt.helpers.CLibrary;
 public class FileUtil {
 
 	/*
-	 * TODO
+	 * TODO: testing
 	 */
     public static void writeToFile(InputStream inStream,
             File to) throws FileUtilException, IOException {
@@ -53,6 +53,13 @@ public class FileUtil {
         }
         out.flush();
         out.close();
+    }
+
+    /*
+     * TODO: implement
+     */
+    public static void appendToFile(File to) throws Exception {
+    	throw new Exception("Not implemented yet!");
     }
 
 

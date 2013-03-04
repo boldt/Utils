@@ -79,6 +79,21 @@ public class ArrayUtil {
 	}
 
 	/**
+	 * Gets the subarray of an array
+	 *
+	 * @param byteArray
+	 * @param startIndexInclusive
+	 * @param endIndexExclusive
+	 * @return
+	 */
+	public static byte[] subarray(final byte[] byteArray, int startIndexInclusive, int endIndexExclusive) {
+		return ArrayUtils.subarray(byteArray, startIndexInclusive, endIndexExclusive);
+		//byte [] subArray = Arrays.copyOfRange(a, 4, 6);
+	}
+
+	// TODO: subarray for T[] and other primitive types
+
+	/**
 	 * Does:
 	 * {"a", "b", "c"} -> "a,b,c" or
 	 * {1, 2, 3} -> "1,2,3"
