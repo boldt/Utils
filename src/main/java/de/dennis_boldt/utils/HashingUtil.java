@@ -1,6 +1,7 @@
 package de.dennis_boldt.utils;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -25,6 +26,13 @@ public class HashingUtil {
 	 */
 	public static String sha1(final String string) {
     	return doDigestForByteArray(string.getBytes(), "SHA-1");
+    }
+
+	public static String sha1(final Object o) {
+    	try {
+			return doDigestForByteArray(StreamUtil.toArray(o), "SHA-1");
+		} catch (IOException e) {}
+    	return null;
     }
 
 	/**

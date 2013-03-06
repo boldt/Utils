@@ -43,6 +43,8 @@ public class NetworkUtil {
 			socket.close();
 			return connected;
 		} catch (IOException e) {
+			System.out.println("Exception for: " + url.getHost() + ":" + url.getPort());
+			e.printStackTrace();
 			return false;
 		}
 	}
