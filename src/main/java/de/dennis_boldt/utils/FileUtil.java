@@ -196,10 +196,24 @@ public class FileUtil {
 	 * @return The mime type
 	 * @throws MimeTypeException
 	 */
-    public static String getMimeType(File file) throws FileUtilException {
+	public static String getMimeType(File file) throws FileUtilException {
         String type = null;
         try {
         	MagicMatch  match = Magic.getMagicMatch(file, false);
+            type = match.getMimeType();
+        } catch (Exception e) { }
+
+        if (type == null || "???".equals(type)) {
+            throw new FileUtilException("Mime type cannot be determined.");
+        }
+
+        return type;
+    }
+
+	public static String getMimeType(byte[] bytes) throws FileUtilException {
+        String type = null;
+        try {
+        	MagicMatch  match = Magic.getMagicMatch(bytes, false);
             type = match.getMimeType();
         } catch (Exception e) { }
 

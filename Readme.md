@@ -22,7 +22,7 @@ This is a small collection of commonly needed Java functionalities.
 <dependency>
 	<groupId>de.dennis_boldt</groupId>
 	<artifactId>Utils</artifactId>
-	<version>0.0.10</version>
+	<version>0.0.14</version>
 </dependency>
 ```
 

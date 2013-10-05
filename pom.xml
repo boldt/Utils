@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.dennis_boldt</groupId>
 	<artifactId>Utils</artifactId>
-	<version>0.0.13</version>
+	<version>0.1.0</version>
 	<dependencies>
 		<dependency>
 			<groupId>jmimemagic</groupId>
