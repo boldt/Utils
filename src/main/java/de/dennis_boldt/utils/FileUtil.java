@@ -1,13 +1,20 @@
 package de.dennis_boldt.utils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.nio.channels.FileChannel;
+import java.util.LinkedList;
+import java.util.List;
 
 import net.sf.jmimemagic.Magic;
 import net.sf.jmimemagic.MagicMatch;
@@ -55,11 +62,61 @@ public class FileUtil {
         out.close();
     }
 
-    /*
-     * TODO: implement
+
+    /**
+     * TODO
+     *
+     * @param bytes
+     * @param to
+     * @throws Exception
      */
-    public static void appendToFile(File to) throws Exception {
-    	throw new Exception("Not implemented yet!");
+    public static void appendToFile(byte[] bytes, File to) throws Exception {
+	    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(to, true)));
+	    out.println(bytes);
+	    out.close();
+    }
+
+    /**
+     *
+     * http://stackoverflow.com/a/5868412/605890
+     *
+     * @param f
+     * @return
+     * @throws Exception
+     */
+    public static List<String> getFileAsStringArray(File f) throws Exception {
+
+
+    	List<String> result = new LinkedList<>();
+
+    	// Open the file
+    	FileInputStream fstream = new FileInputStream(f);
+    	BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+
+    	String strLine;
+
+    	//Read File Line By Line
+    	while ((strLine = br.readLine()) != null)   {
+    		result.add(strLine);
+    	}
+
+    	//Close the input stream
+    	br.close();
+
+    	return result;
+    }
+
+    /**
+     * TODO
+     *
+     * @param data
+     * @param to
+     * @throws Exception
+     */
+    public static void appendToFile(String data, File to) throws Exception {
+	    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(to, true)));
+	    out.println(data);
+	    out.close();
     }
 
 

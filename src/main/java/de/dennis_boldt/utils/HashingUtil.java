@@ -30,7 +30,7 @@ public class HashingUtil {
 
 	public static String sha1(final Object o) {
     	try {
-			return doDigestForByteArray(StreamUtil.toArray(o), "SHA-1");
+			return doDigestForByteArray(ObjectUtil.toArray(o), "SHA-1");
 		} catch (IOException e) {}
     	return null;
     }

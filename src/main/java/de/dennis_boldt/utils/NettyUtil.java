@@ -6,7 +6,7 @@ import io.netty.buffer.Unpooled;
 import java.nio.ByteBuffer;
 
 /**
- * Some utils for Netty 4.0.0.Beta1
+ * Some utils for Netty 4.0.9.Final
  *
  * @author Dennis Boldt
  *

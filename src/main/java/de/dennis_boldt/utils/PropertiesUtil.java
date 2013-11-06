@@ -6,6 +6,12 @@ import java.util.Properties;
 
 public class PropertiesUtil {
 
+	/**
+	 * Loads a given properties file
+	 *
+	 * @param s
+	 * @return
+	 */
 	public static Properties load(File s) {
 		try {
 			if (s != null && s.exists())
