@@ -30,25 +30,15 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 /**
- * Source: http://mark.koli.ch/2009/05/howto-using-javas-securerandom-javasecuritysecurerandom.html
+ * Source:
+ * - http://mark.koli.ch/2009/05/howto-using-javas-securerandom-javasecuritysecurerandom.html
+ * - http://docs.oracle.com/javase/7/docs/api/java/security/SecureRandom.html
  *
  * It is package private, so it is not accessible by other packages
  *
  * @author Mark S. Kolich
  */
 public class SecureRandomNumber {
-
-	// This ins't thread safe but we probably don't really care
-	// since all we're doing is reading a bunch of random numbers
-	// out of the generator.
-	private static final SecureRandom sRandom__;
-	static {
-	    try {
-	    	sRandom__ = SecureRandom.getInstance( "SHA1PRNG" );
-	    } catch ( NoSuchAlgorithmException e ) {
-	        throw new Error(e);
-	    }
-	}
 
 	/**
 	 * Get the number of next random bits in this SecureRandom
@@ -59,18 +49,29 @@ public class SecureRandomNumber {
 	 */
 	public static byte [] getSecureRandom ( int bits ) {
 
+		System.out.println("getSecureRandom - start");
+
 		// Make sure the number of bits we're asking for is at least
 		// divisible by 8.
 		if ( (bits % 8) != 0 ) {
 			throw new IllegalArgumentException("Size is not divisible by 8!");
 		}
 
-		// Usually 64-bits of randomness, 8 bytes
-	    final byte [] bytes = new byte[ bits / 8 ];
+		byte [] bytes = new byte[ bits / 8 ];
+
+		SecureRandom sRandom = null;
+		try {
+			sRandom = SecureRandom.getInstance( "SHA1PRNG" );
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+			return null;
+		}
 
 	    // Get the next 64 random bits. Forces SecureRandom
 	    // to seed itself before returning the bytes.
-	    sRandom__.nextBytes(bytes);
+	    sRandom.nextBytes(bytes);
+
+		System.out.println("getSecureRandom - end");
 
 	    return bytes;
 	}
