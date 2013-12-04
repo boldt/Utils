@@ -51,22 +51,28 @@ public class SecureRandomNumber {
 
 		System.out.println("getSecureRandom - start");
 
+		System.out.println("  Check divisible by 8");
 		// Make sure the number of bits we're asking for is at least
 		// divisible by 8.
 		if ( (bits % 8) != 0 ) {
 			throw new IllegalArgumentException("Size is not divisible by 8!");
 		}
 
+		System.out.println("  Create array");
 		byte [] bytes = new byte[ bits / 8 ];
 
+		System.out.println("  Get Random number");
 		SecureRandom sRandom = null;
 		try {
+			System.out.println("  Get Random number");
 			sRandom = SecureRandom.getInstance( "SHA1PRNG" );
 		} catch (NoSuchAlgorithmException e) {
+			System.out.println("Exception: " + e.getMessage());
 			e.printStackTrace();
 			return null;
 		}
 
+		System.out.println("  Get " + bytes.length + " bytes");
 	    // Get the next 64 random bits. Forces SecureRandom
 	    // to seed itself before returning the bytes.
 	    sRandom.nextBytes(bytes);
