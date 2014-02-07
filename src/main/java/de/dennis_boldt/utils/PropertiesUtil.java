@@ -2,6 +2,8 @@ package de.dennis_boldt.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesUtil {
@@ -9,21 +11,28 @@ public class PropertiesUtil {
 	/**
 	 * Loads a given properties file
 	 *
-	 * @param s
+	 * @param file
 	 * @return
 	 */
-	public static Properties load(File s) {
+	public static Properties load(File file) {
 		try {
-			if (s != null && s.exists())
-			{
-				FileInputStream input = new FileInputStream(s);
-				Properties prop = new Properties();
-				prop.load(input);
-				return prop;
+			if (file != null && file.exists()) {
+				return load(new FileInputStream(file));
 			}
-		} catch (Exception e) { }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
-
+	public static Properties load(InputStream is) {
+		try {
+			Properties prop = new Properties();
+			prop.load(is);
+			return prop;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

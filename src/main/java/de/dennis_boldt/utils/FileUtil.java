@@ -106,6 +106,11 @@ public class FileUtil {
     	return result;
     }
 
+    public static String getFileAsString(File f) throws Exception {
+    	List<String> fileData = getFileAsStringArray(f);
+    	return ListUtil.join(fileData, "\n");
+    }
+
     /**
      * TODO
      *
